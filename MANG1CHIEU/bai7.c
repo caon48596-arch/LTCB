@@ -2,63 +2,52 @@
 
 int main()
 {
-    int a[10];
-    int i;
-
-    printf("Nhap 10 so nguyen:\n");
-    for (i = 0; i < 10; i++)
+    int n;
+    scanf("%d", &n);
+    int a[n];
+    for (int i = 0; i < 5; i++)
     {
-        if (scanf("%d", &a[i]) != 1)
-        {
-            printf("Nhap khong hop le.\n");
-            return 1;
-        }
+        scanf("%d", &a[i]);
     }
-
-    // Tìm tần suất tối đa và các giá trị tương ứng
-    int max_count = 0;
-
-    // Đếm tần suất cho từng phần tử
-    for (i = 0; i < 10; i++)
+    int max = 0;
+    for (int i = 0; i < 5; i++)
     {
         int count = 0;
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < 5; j++)
         {
             if (a[i] == a[j])
                 count++;
         }
-        if (count > max_count)
+        if (count > max)
         {
-            max_count = count;
+            max = count;
         }
     }
-
-    // In các giá trị có tần suất bằng max_count
-    printf("Gia tri co tan suat lon nhat ( %d lan):\n", max_count);
-    for (i = 0; i < 10; i++)
+    for (int i = 0; i < 5; i++)
     {
         int count = 0;
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < 5; j++)
         {
             if (a[i] == a[j])
                 count++;
         }
-        if (count == max_count)
+
+        if (count == max)
         {
-            // Tránh in đi in lại cùng một phần tử nhiều lần nếu nó lặp trong mảng
-            int already_printed = 0;
+            int daXuatHienTruocDo = 0;
             for (int k = 0; k < i; k++)
             {
                 if (a[k] == a[i])
                 {
-                    already_printed = 1;
+                    daXuatHienTruocDo = 1;
                     break;
                 }
             }
-
-            printf("%d\n", a[i]);
+            if (daXuatHienTruocDo == 0)
+            {
+                printf("%d\n", a[i]);
+            }
         }
     }
-
     return 0;
 }
