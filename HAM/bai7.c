@@ -26,117 +26,34 @@ int UCLN(int a, int b)
     }
     return ucln;
 }
-int UCLN1(int a, int b)
+int BCNN(int c, int d)
 {
-    scanf("%d", &a);
-    scanf("%d", &b);
-    int a1 = a;
-    int b1 = b;
-    int ucln;
-    int max;
-    if (a1 > b1)
-    {
-        max = a1;
-    }
+    int max2;
+    int g = UCLN(c, d);
+    return (c / g) * d;
+    if (max2 % d == 0 && max2 % c == 0)
+        printf("bcnn %d", max2);
     else
-    {
-        max = b1;
-    }
-    for (int i = max; i > 1; i--)
-    {
-        if (a1 % i == 0)
-        {
-            if (b1 % i == 0)
-            {
-                ucln = i;
-                break;
-            }
-        }
-    }
-    return ucln;
+        printf("k co bncc");
 }
-void UCLN2(int a, int b)
-{
-    int a1 = a;
-    int b1 = b;
-    int max;
-    if (a1 > b1)
-    {
-        max = a1;
-    }
-    else
-    {
-        max = b1;
-    }
-    int ucln = 1;
-    for (int i = max; i > 1; i--)
-    {
-        if (a1 % i == 0)
-        {
-            if (b1 % i == 0)
-            {
-                ucln = i;
-                break;
-            }
-        }
-    }
-    if (ucln == 1)
-    {
-        printf("sai");
-    }
-    else
-    {
-        printf("%d la ucln", ucln);
-    }
-}
-void UCLN3()
-{
-    int a, b;
-    scanf("%d%d", &a, &b);
-    int a1 = a;
-    int b1 = b;
-    int max;
-    if (a1 > b1)
-    {
-        max = a1;
-    }
-    else
-    {
-        max = b1;
-    }
-    int ucln = 1;
-    for (int i = max; i > 1; i--)
-    {
-        if (a1 % i == 0)
-        {
-            if (b1 % i == 0)
-            {
-                ucln = i;
-                break;
-            }
-        }
-    }
-    if (ucln == 1)
-    {
-        printf("sai");
-    }
-    else
-    {
-        printf("%d la ucln", ucln);
-    }
-}
+
 int main()
 {
-    // int a, b;
-    // int i;
-    // scanf("%d%d", &a, &b);
-    UCLN3();
-    // if (c == 0)
-    // {
-    //     printf("k co");
-    // }
-    // else
-    // {
-    //     printf("ucln la %d", c);
-    // }
+    int a, b;
+    int i, c, d;
+    scanf("%d%d", &a, &b);
+    i = UCLN(a, b);
+    if (i == 0)
+    {
+        printf("k co");
+    }
+    else
+    {
+        printf("ucln la %d", i);
+    }
+    printf("\n");
+    scanf("%d %d", &c, &d);
+
+    int j = BCNN(c, d);
+    printf("bcnn la %d", j);
 }
